@@ -149,6 +149,11 @@ export default {
       default: false,
       description: 'Whether or not the dropdown is disabled',
     },
+    keepSearch: {
+      type: Boolean,
+      default: false,
+      description: 'Keep search string after item selection',
+    },
   },
   events: {
     input: {
@@ -574,7 +579,9 @@ export default {
             .concat(selectedValue)
         : selectedValue;
       this.$emit('input', newValue);
-      this.filter = '';
+      if (!this.keepSearch) {
+        this.filter = '';
+      }
       if (!this.multiple) {
         this.$nextTick(this.updateSelectedIndex);
       }
