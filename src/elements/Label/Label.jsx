@@ -51,6 +51,10 @@ export default {
       description: 'A label can appear as a tag.',
       type: Boolean,
     }),
+    text: {
+      description: 'Short-hand for slot',
+      type: String
+    }
   },
   computed: {
     pointingClass() {
@@ -91,7 +95,7 @@ export default {
         )}
       >
         {this.icon && <Icon name={this.icon} />}
-        {this.$slots.default}
+        {this.text || this.$slots.default}
       </ElementType>
     );
   },
