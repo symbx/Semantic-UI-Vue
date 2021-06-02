@@ -154,6 +154,11 @@ export default {
       default: false,
       description: 'Keep search string after item selection',
     },
+    leftIcon: {
+      type: String,
+      default: null,
+      description: 'Icon by left side of dropdown menu'
+    },
   },
   events: {
     input: {
@@ -688,6 +693,11 @@ export default {
         )}
         {...eventHandlers}
       >
+        {this.leftIcon !== null && (
+          <i aria-hidden="true"
+             class={`${this.icon} icon`}
+          />
+        )}
         {this.selectedNodes}
         {this.searchNode}
         {this.textNode}
