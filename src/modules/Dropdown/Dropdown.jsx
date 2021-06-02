@@ -159,6 +159,11 @@ export default {
       default: null,
       description: 'Icon by left side of dropdown menu'
     },
+    leftIconColor: {
+      type: String,
+      default: '',
+      description: 'Color of left dropdown icon'
+    }
   },
   events: {
     input: {
@@ -695,7 +700,7 @@ export default {
       >
         {this.leftIcon !== null && (
           <i aria-hidden="true"
-             class={`${this.leftIcon} icon`}
+             class={`${this.leftIcon} ${this.leftIconColor} icon`}
           />
         )}
         {this.selectedNodes}
