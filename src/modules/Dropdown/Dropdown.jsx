@@ -695,7 +695,7 @@ export default {
       >
         {this.leftIcon !== null && (
           <i aria-hidden="true"
-             class={`${this.icon} icon`}
+             class={`${this.leftIcon} icon`}
           />
         )}
         {this.selectedNodes}
